@@ -1,0 +1,777 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --main-color: #4B3A2A;
+    --second-color: #D4A373;
+    --text-color: #ffffff;
+    --bg-color-01: #4B3A2A;
+    --bg-color-02: #F4E3C1;
+    --bg-color-03: #21412D;
+    --bg-color-04: #EDEDED;
+    --bg-color-05: #000000;
+    --bg-color-01-02: #4b3a2ad5;
+    --bg-color-02-02: #f4e3c16e;
+    --bg-color-02-03: #f4e3c1e0;
+
+    --hover-bg: #3A2D21;
+    --bg-gradient: linear-gradient(135deg, #4B3A2A, #21412D);
+    --color-00: #0000001a;
+
+    --highlight-color: #FFBA00;
+
+
+    /* EXTRA */
+    --color-01: #999999;
+    --color-02: #009539;
+    --color-03: #7950F2;
+    --color-04: #C00000;
+    --color-05: #232323;
+}
+
+/* Reset do css da pagina */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    font-family: "Poppins", sans-serif;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    /* rolar suave na pagina ao clicar nos index */
+    scroll-behavior: smooth;
+    font-size: 16px;
+
+    & a {
+        color: inherit;
+    }
+
+    & a:active {
+        color: inherit;
+    }
+
+    & a:visited {
+        color: inherit;
+    }
+
+
+}
+
+body {
+    background-color: var(--bg-color-01);
+    color: #fff;
+    font-size: 16px;
+    /* overflow: hidden; remove o scroll da tela */
+
+    & h1, h2, h3, h4, h5, h6 {
+        font-family: "Montserrat", sans-serif;
+    }
+
+
+}
+
+/* header */
+.logo {
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #fff;
+    font-family: "Cinzel", serif;
+}
+
+header {
+    position: fixed;
+    width: 80vw;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%;
+    z-index: 10;
+    height: 100px;
+    background-color: var(--bg-color-01);
+    width: 100vw;
+
+    & .logo {
+        font-size: 1.5rem;
+
+    }
+
+
+    & nav {
+        & ul {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+        }
+    }
+
+    & .logo:hover {
+        color: var(--second-color);
+    }
+
+    & nav {
+        & ul {
+            & li:hover {
+                color: var(--second-color);
+            }
+        }
+    }
+}
+
+/* /header */
+
+/* hero */
+
+.hero {
+    display: flex;
+    padding-top: 100px;
+    height: 40vw;
+    max-height: 600px;
+    background: linear-gradient(to right, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 0) 100%), url(/imgs/haircut-02-i.jpg);
+    background-size: cover;
+    /* Ou contain, 100% auto, etc. */
+    background-repeat: no-repeat;
+    background-position: 90;
+
+    & .hero-content {
+        width: 50%;
+        margin-top: 5rem;
+        padding: 0 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        align-items: left;
+        gap: 20px;
+
+        & h1 {
+            font-size: 3rem;
+            font-weight: 600;
+            line-height: 3.5rem;
+            color: var(--bg-color-02);
+
+            & span {
+                font-size: inherit;
+                color: var(--second-color);
+            }
+        }
+    }
+}
+
+/* /hero */
+
+
+/* Services */
+.services {
+    padding: 4rem 0;
+    background-color: var(--bg-color-03);
+    /* Cor de fundo da seção */
+    text-align: center;
+}
+
+.services h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--second-color);
+}
+
+.services h2 span {
+    color: var(--highlight-color);
+    font-size: inherit;
+}
+
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* Colunas responsivas */
+    gap: 2rem;
+    /* Espaçamento entre as caixas de serviço */
+    padding: 0 2rem;
+    /* Adicionando um padding lateral */
+}
+
+@media (max-width: 1200px) {
+    .services-container {
+        grid-template-columns: repeat(3, 1fr);
+        /* Mostra no máximo 3 colunas em telas menores */
+    }
+}
+
+@media (max-width: 768px) {
+    .services-container {
+        grid-template-columns: repeat(2, 1fr);
+        /* Mostra 2 colunas em tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .services-container {
+        grid-template-columns: 1fr;
+        /* Mostra 1 coluna em celulares */
+    }
+}
+
+.services-box {
+    background-color: var(--bg-color-02-02);
+    border-radius: 1rem;
+    /* Bordas arredondadas */
+    padding: 2rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    /* Sombra para destaque */
+    transition: transform 0.3s, box-shadow 0.3s;
+    /* Transição suave para hover */
+}
+
+.services-box:hover {
+    transform: translateY(-5px);
+    /* Efeito de elevação ao passar o mouse */
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
+    /* Sombra mais forte ao passar o mouse */
+    border: var(--highlight-color) solid 4px;
+}
+
+.services-box i {
+    font-size: 2.5rem;
+    /* Tamanho do ícone */
+    color: var(--highlight-color);
+    /* Cor do ícone */
+    margin-bottom: 1rem;
+    /* Espaçamento inferior do ícone */
+}
+
+.services-box h3 {
+    font-size: 1.8rem;
+    /* Tamanho do título */
+    margin: 1rem 0;
+    /* Margem superior e inferior */
+    color: var(--main-color);
+    /* Cor do título */
+}
+
+.services-box p {
+    color: var(--text-color);
+    /* Cor do texto */
+    margin-bottom: 1.5rem;
+    /* Margem inferior */
+}
+
+/* /services */
+
+/* Estilização Geral da Seção */
+.about-us {
+    padding: 60px 20px;
+    background-color: var(--bg-color-01);
+    color: var(--text-color);
+}
+
+/* Título Principal */
+.about-us {
+    /* background-image: linear-gradient(rgba(75, 58, 42, 0.95), rgba(75, 58, 42, 0.95)); */
+    background-image: linear-gradient(rgba(75, 58, 42, 0.85), rgba(75, 58, 42, 0.85)), url('imgs/wood.jpg');
+    background-size: cover;
+    /* Faz a imagem cobrir todo o fundo */
+    background-position: center;
+    /* Centraliza a imagem */
+    background-repeat: no-repeat;
+    /* Não repete a imagem */
+    text-align: center;
+    align-items: center;
+}
+
+.about-us h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+
+    & span {
+        color: var(--highlight-color);
+
+        & .logo {
+            font-size: 2.5rem;
+        }
+    }
+}
+
+
+
+/* Estilização dos Blocos */
+
+.block-1 {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.block-1, .block-2, .block-3 {
+    margin-bottom: 40px;
+    padding: 20px;
+
+    /* border-radius: 8px; */
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+}
+
+/* Títulos dos Blocos */
+.block-1 h2, .block-2 h2, .block-3 h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+
+}
+
+/* Parágrafo dos Blocos */
+.block-1 p, .block-2 p, .block-3 p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Estilização da Equipe */
+.container-employee {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* Colunas responsivas */
+    gap: 2rem;
+    /* Espaçamento entre as caixas de serviço */
+    padding: 0rem 2rem;
+    /* Adicionando um padding lateral */
+
+}
+
+.employee {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem 0;
+    background-color: var(--bg-color-02-02);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    color: var(--text-color);
+
+}
+
+.employee img {
+    width: 150px;
+    /* Tamanho da imagem do funcionário */
+    height: 150px;
+    /* Tamanho da imagem do funcionário */
+    border-radius: 50%;
+    /* Imagem circular */
+    object-fit: cover;
+    /* Cobre o espaço sem distorcer */
+    object-position: left top;
+    margin-bottom: 10px;
+    border: var(--highlight-color) solid 4px;
+}
+
+.employee span {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin: 5px 0;
+}
+
+.employee h3 {
+    font-size: 1.1rem;
+    color: var(--highlight-color);
+    /* Cor de destaque */
+}
+
+/* Estilização do Bloco 3 */
+.block-3 {
+    height: 60vw;
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & img {
+        width: 1%;
+        border-radius: 8px;
+    }
+}
+
+.block-3 .imagens {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.block-3 .imagens img {
+    width: 100%;
+    /* A imagem ocupa toda a largura do contêiner */
+    height: auto;
+    /* Mantém a proporção da imagem */
+    border-radius: 8px;
+    /* Arredondar os cantos da imagem */
+    transition: transform 0.3s ease;
+    /* Efeito de transição */
+}
+
+.block-3 .imagens img:hover {
+    transform: scale(1.05);
+    /* Efeito de zoom ao passar o mouse */
+}
+
+/* Estilização das Setas */
+.arrows-img {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    gap: 0.5rem;
+
+    & img {
+        width: 50%;
+        cursor: pointer;
+    }
+
+    & .imagens {
+        width: 100%;
+    }
+
+    & button {
+        background-color: #f4e3c160;
+        cursor: pointer;
+        border: none;
+        border-radius: 50%;
+        padding: 0.5rem;
+        color: #fff;
+        font-size: 1rem;
+        width: 6rem;
+        height: 6rem;
+        transition: background-color 0.3s ease;
+        align-items: center;
+
+
+    }
+
+    & button:hover {
+        background-color: #f4e3c1;
+    }
+
+    & .prev {
+        transform: scale(-1);
+    }
+
+}
+
+/* fim about us */
+
+/* CONTACT */
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    margin-top: 1rem;
+    background: linear-gradient(to left, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 0) 100%), url(/imgs/haircut-01.jpg) no-repeat center center;
+    background-size: cover;
+
+
+    & .contact-titles {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 1rem;
+
+        & h1 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+
+            & span {
+                color: var(--highlight-color);
+
+                & a {
+                    font-size: 1.58rem;
+                }
+            }
+
+        }
+
+        & .contact-p-box {
+            display: flex;
+            flex-direction: row;
+            gap: 4rem;
+
+            & i {
+                margin-right: 0.5rem;
+            }
+
+            & p {
+                align-items: center;
+            }
+        }
+    }
+
+    & .contact-box-content {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 90%;
+        gap: 5rem;
+
+
+
+        & .contact-form {
+            display: flex;
+            flex-direction: column;
+            color: var(--hover-bg);
+            background-color: var(--bg-color-02-03);
+            border-radius: 0.8rem;
+            width: 60%;
+
+            & p, h3 {
+                margin-top: 1rem;
+            }
+
+            & form {
+                margin-top: 0.8rem;
+                width: 100%;
+            }
+
+            & .form-content {
+                padding: 1rem;
+
+                & label {
+                    margin-bottom: 0.5rem;
+                    color: #fff;
+                }
+
+                & button {
+                    background-color: var(--bg-color-03);
+                    color: var(--text-color);
+                }
+
+                & input, textarea, select {
+                    color: #fff;
+                    padding: 1rem;
+                    margin-bottom: 1rem;
+                    border: none;
+                    border-radius: 0.5rem;
+                    background-color: var(--bg-color-01-02);
+                }
+
+                & .input-box {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    width: 100%;
+                    gap: 1rem;
+
+                    & input, select {
+                        width: 50%;
+                    }
+
+                    & textarea {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+        & .contact-info {
+            width: 40%;
+            margin-top: 2rem;
+
+
+            & h2 {
+                margin-bottom: 3rem;
+                font-size: 1.5rem;
+            }
+
+            & h3 {
+                margin-bottom: 1rem;
+                font-size: 1.2rem;
+            }
+
+            & h4 {
+                margin-bottom: 0.5rem;
+            }
+
+            & .contact-content {
+                margin-bottom: 1rem;
+            }
+        }
+    }
+}
+
+/* /CONTACT */
+
+/*  FOOTER */
+footer {
+    background-color: var(--bg-color-05);
+    color: var(--text-color);
+    padding: 3rem;
+
+    & .logo {
+        font-size: 1.5rem;
+
+        &:hover{
+            color: var(--highlight-color);
+        }
+    }
+
+    & h4 {
+        font-size: 1.3rem;
+    }
+
+    .footer-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-left: 2rem;
+        margin-right: 2rem;
+
+        & .newsletter-footer {
+            display: flex;
+            align-items: center;
+            gap: 0.2rem;
+
+            & input {
+                padding: 0.5rem;
+                margin-right: 0.5rem;
+                color: var(--text-color);
+                background-color: transparent;
+                
+            }
+
+            & .box-input-footer{
+                border-bottom: solid  0.1rem var(--text-color);
+            }
+        }
+    }
+}
+
+.box-footer{
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    gap: 1rem;
+}
+
+.footer-about, .footer-address, .footer-contact, .footer-links {
+    margin: 0 20px; /* Adiciona espaçamento entre as colunas */
+}
+
+.footer-about p {
+    margin: 0; /* Remove margens para evitar desalinhamento */
+    font-size: 1rem;
+}
+
+.footer-social i{
+    font-size: 1.5rem;
+}
+
+.footer-social{
+    margin-top: 0.5rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.box-footer p, .box-footer a{
+    margin-top: 0.5rem;
+    word-wrap: break-word;
+}
+
+.footer-about{
+    width: 40%; /* Mantém a largura fixa em 40% */
+}
+
+.footer-address,
+.footer-contact{
+    width: 25%;
+}
+.footer-links {
+    width: 10%;
+}
+
+.footer-links{
+    width: 10%;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: var(--text-color);
+}
+.footer-links a{
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.footer-copyright{
+    text-align: center;
+}
+
+.footer-copyright a{
+    color: var(--text-color);
+    margin-top: 1rem;
+    border-bottom: var(--text-color) 0.1rem solid;
+}
+
+.footer-copyright a:hover{
+    color: var(--highlight-color);
+    transform: scale(1.2rem);
+    border-bottom: var(--text-color) 0.1rem solid;
+}
+
+/* /FOOTER */
+
+/* buttons */
+.btn {
+    display: inline-block;
+    padding: 0.7rem 1.8rem;
+    background-color: var(--bg-color-02);
+    border-radius: 0.8rem;
+    color: var(--main-color);
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--highlight-color);
+    color: var(--text-color);
+    /* Muda a cor do texto ao passar o mouse */
+    box-shadow: 0 0 0.3rem var(--text-color);
+    border: 1px solid var(--text-color);
+
+}
+
+.btn-header {
+    display: inline-block;
+    padding: 0.7rem 1.8rem;
+    background-color: var(--bg-color-02);
+    border-radius: 0.8rem;
+    color: var(--main-color);
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    transition: 0.3s ease;
+    margin-top: 1.2rem;
+    cursor: pointer;
+}
+
+.btn-header:hover {
+    box-shadow: 0 0 0.3rem var(--text-color);
+    /* background-color: inherit; */
+    /* color: var(--text-color); */
+    border: 1px solid var(--text-color);
+    transform: scale(1.2);
+}
+
+.btn-subscribe{
+    color: var(--text-color);
+    cursor: pointer;
+    background-color: transparent ;
+
+    & i{
+        font-size: 1.4rem;
+    }
+}
+
+.btn-subscribe:hover{
+    color: var(--bg-color-01);
+    transform: scale(1.3);
+}
