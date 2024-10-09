@@ -1,6 +1,6 @@
 # Barba Raiz
 ## Explicação
-    Projeto pessoal de uma landpage de barbearia, onde pedi ao Chatgpt uma empresa ficticia para eu desenvolver o projeto, sendo gerado pelo chatgpt a paleta de cores e as textos exibidos na pagina.
+Projeto pessoal de uma landpage de barbearia, onde pedi ao Chatgpt uma empresa ficticia para eu desenvolver o projeto, sendo gerado pelo chatgpt a paleta de cores e as textos exibidos na pagina.
 ## Descrição
 
 "Barba Raiz" é uma barbearia tradicional localizada em Feira de Santana, dedicada a oferecer uma experiência de barbearia autêntica e atenciosa. Com um ambiente que remete aos clássicos barbershops, nós proporcionamos serviços de corte de cabelo, barba e cuidados pessoais, tudo realizado por profissionais experientes.
