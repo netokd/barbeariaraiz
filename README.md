@@ -20,7 +20,7 @@ Nosso objetivo é resgatar o valor da tradição do cuidado masculino, oferecend
 
 - **HTML**: Para a estruturação do site.
 - **CSS**: Para a estilização e responsividade do layout.
-- **JavaScript**: Para funcionalidades interativas.
+- **JavaScript**: Para funcionalidades interativas no slide do Bloco 3 do Sobre Nos.
 - **Git**: Para controle de versão e colaboração.
 
 ## Como Executar o Projeto
