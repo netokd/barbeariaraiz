@@ -347,6 +347,7 @@ header {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 1rem;
     color: var(--text-color);
+    overflow: hidden;
 
 }
 
@@ -378,7 +379,8 @@ header {
 
 /* Estilização do Bloco 3 */
 .block-3 {
-    height: 48vw;
+    height: 800px;
+    max-height: 800px;
     width: 80%;
     margin: 0 auto;
     display: flex;
@@ -401,7 +403,7 @@ header {
 .block-3 .item img {
     width: 100%;
     /* A imagem ocupa toda a largura do contêiner */
-    height: auto;
+    max-height: 500px;
     /* Mantém a proporção da imagem */
     border-radius: 8px;
     /* Arredondar os cantos da imagem */
@@ -422,7 +424,8 @@ header {
     width: 70%;
     align-items: center;
     gap: 0.5rem;
-    height: auto;
+    height: 600px;
+    max-height: 500px;
 
     & img {
         width: 60%;
@@ -433,7 +436,8 @@ header {
     & .list {
         position: relative;
         width: 90%;
-        height: auto;
+        height: 400px;
+        margin-bottom: 50px;
 
         & .item {
             position: absolute;
@@ -463,6 +467,7 @@ header {
     & .prev, .next {
         position: absolute;
         top: 50%;
+        transform: translateY(-50%);
         z-index: 1;
 
     }
@@ -470,13 +475,13 @@ header {
     & .next {
         right: -11%;
         opacity: 1;
-        transform: translateY(200%);
+        /* transform: translateY(-80%); */
 
 
     }
 
     & .prev {
-        transform: translateY(200%) scale(-1);
+        transform: translateY(-50%) scale(-1);
         left: -11%;
         opacity: 1;
 
@@ -484,8 +489,10 @@ header {
 
     & p {
         position: absolute;
-        /* top: -100%; */
-        transform: translateY(650%);
+        text-align: center;
+        width: 100%;
+        bottom: -17%;
+        transform: translateY(0);
 
     }
 
@@ -507,6 +514,7 @@ header {
             /* top: 50%;
             left: 50%; */
             transform: translate(5%, 10%);
+            /* centralizar a imagem da seta dentro do botão */
         }
     }
 
@@ -515,6 +523,28 @@ header {
     }
 
 }
+/* Media Queries para telas maiores */
+@media (min-width: 1600px) {
+    
+
+    .arrows-img {
+        width: 60%;
+        & .next {
+            top: 50%;
+            right: -8%;
+        }
+
+        & .prev{
+            left: -8%;
+        }
+
+        & p {
+            bottom: -30%;
+            font-size: 1.1rem;
+        }
+    }
+}
+
 
 /* fim about us */
 
